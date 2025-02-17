@@ -83,7 +83,7 @@ window.onload = function () {
 
 
 
-
+let stopTime;
 let start;
 let hour = 0;
 let min = 0;
@@ -114,7 +114,7 @@ function startTimer(index) {
     document.getElementById(`workerName${index}`).style.backgroundColor = "red";
     document.getElementById(`workerStatus${index}`).style.backgroundColor = "red";
   }
-  setTimeout(() => startTimer(index), 1000);
+  stopTime = setTimeout(() => startTimer(index), 1000);
 }
 
 
@@ -162,4 +162,5 @@ function stopTimer(index) {
   document.getElementById(`workerTime${index}`).style.backgroundColor = "";
   document.getElementById(`workerName${index}`).style.backgroundColor = "";
   document.getElementById(`workerStatus${index}`).style.backgroundColor = "";
+  clearTimeout(stopTime);
 }
