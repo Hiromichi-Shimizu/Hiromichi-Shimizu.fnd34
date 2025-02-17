@@ -11,9 +11,10 @@ function searchName() {
   if (!name) {
     return document.getElementById("inName").style.display = "none";
   }
+
   let workerNames = document.querySelectorAll(".worker-name > div");
   let inName = false;
-  let index = -1;
+  let index = 0;
 
   for (let i = 1; i < workerNames.length; i++) {
     if (workerNames[i].textContent === name) {
@@ -41,7 +42,6 @@ function inWorkerStatus(index) {
   workerStatus.style.backgroundColor = "rgba(10, 246, 65, 0.936)";
   workerName.style.backgroundColor = "rgba(10, 246, 65, 0.936)";
   workerTime.style.backgroundColor = "rgba(10, 246, 65, 0.936)";
-
 }
 
 window.onload = function () {
@@ -62,14 +62,15 @@ window.onload = function () {
   });
 
   ["areaA", "areaB", "areaC", "areaD", "areaE", "areaF"].forEach(id => {
-    const state = localStorage.getItem(id);
-    if (state) {
+    const areaColor = localStorage.getItem(id);
+    if (areaColor) {
       const element = document.getElementById(id);
-      if (element.classList.contains("lightYellow") && state === 'lightYellow') {
-        element.classList.remove("lightYellow");
-        element.classList.add("lightRed");
+      if (areaColor === 'lightYellow') {
+        element.classList.remove("transparent");
+        element.classList.add("lightYellow");
       } else {
-        element.classList.add(state);
+        element.classList.remove("lightYellow");
+        element.classList.add("transparent");
       }
     }
   });
@@ -79,6 +80,9 @@ window.onload = function () {
   document.getElementById("task-content").textContent = localStorage.getItem("task-content");
   document.getElementById("task-capacity").textContent = localStorage.getItem("task-capacity");
 };
+
+
+
 
 let start;
 let hour = 0;
@@ -126,17 +130,17 @@ function outSearchName() {
     return document.getElementById("outName").style.display = "none";
   }
   let workerNames = document.querySelectorAll(".worker-name > div");
-  let inName = false;
-  let index = -1;
+  let outName = false;
+  let index = 0;
 
   for (let i = 1; i < workerNames.length; i++) {
     if (workerNames[i].textContent === name) {
-      inName = true;
+      outName = true;
       index = i;
     }
   }
 
-  if (inName) {
+  if (outName) {
     start = new Date();
     outWorkerStatus(index);
     stopTimer(index);
