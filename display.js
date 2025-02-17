@@ -123,7 +123,7 @@ document.getElementById("outSend").addEventListener("click", outSearchName);
 function outSearchName() {
   let name = document.getElementById("inputOutName").value;
   if (!name) {
-    return document.getElementById("inName").style.display = "none";
+    return document.getElementById("outName").style.display = "none";
   }
   let workerNames = document.querySelectorAll(".worker-name > div");
   let inName = false;
