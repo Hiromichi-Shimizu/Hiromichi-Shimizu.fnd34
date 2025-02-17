@@ -56,13 +56,14 @@ let selectedWorkers = [];
 function save() {
   ["areaA", "areaB", "areaC", "areaD", "areaE", "areaF"].forEach((id) => {
     const element = document.getElementById(id);
-    const state = element.classList.contains("lightYellow")
-      ? "lightYellow"
-      : "transparent";
-    localStorage.setItem(id, state);
-
+    if (element.classList.contains("lightYellow") {
+      localStorage.setItem(id, element.value);
+    } else {
+      localStorage.removeItem(id);
+    }
     element.classList.remove("lightYellow", "transparent");
   });
+  
   ["workerName1", "workerName2", "workerName3", "workerName4", "workerName5", "workerName6"].forEach((id) => {
     const element = document.getElementById(id);
     if (element.classList.contains("blue")) {
