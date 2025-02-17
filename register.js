@@ -1,7 +1,7 @@
 "use strict";
 
-function changeArea(id) {
-  const element = document.getElementById(id);
+const changeArea = function(event) {
+  const element = event.target;
   if (element.classList.contains("lightYellow")) {
     element.classList.remove("lightYellow");
     element.classList.add("transparent");
@@ -11,59 +11,33 @@ function changeArea(id) {
   }
 }
 
-function changeWorker(element) {
+document.querySelectorAll(".area-up-box").forEach((element) => element.addEventListener("click", changeArea));
+document.querySelectorAll(".area-down-box").forEach((element) => element.addEventListener("click", changeArea));
+
+const changeWorker = function(event){
+  const element = event.target;
   if (element.classList.contains("blue")) {
     element.classList.remove("blue");
     element.classList.add("transparent");
-    localStorage.removeItem(element.id);
   } else {
     element.classList.remove("transparent");
     element.classList.add("blue");
-    localStorage.setItem(element.id, element.innerText);
   }
 }
 
-window.onload = function () {
-  const areaButtons = document.querySelectorAll(".area-up-box, .area-down-box");
-  const workerButtons = document.querySelectorAll(".worker-button");
+document.querySelectorAll(".worker-button").forEach((element) => element.addEventListener("click", changeWorker));
 
-  areaButtons.forEach((button) => {
-    const storedStatus = localStorage.getItem(button.id);
-    if (storedStatus) {
-      button.classList.add(storedStatus);
-    }
-    button.addEventListener("click", function () {
-      changeArea(button.id);
-    });
-  });
-
-  workerButtons.forEach((button) => {
-    const storedText = localStorage.getItem(button.id);
-    if (storedText) {
-      button.classList.add("blue");
-      button.innerText = storedText;
-    }
-    button.addEventListener("click", function () {
-      changeWorker(button);
-    });
-  });
-};
-
-document.getElementById("save").addEventListener("click", save);
-
-let selectedWorkers = [];
-
-function save() {
+const save = function() {
   ["areaA", "areaB", "areaC", "areaD", "areaE", "areaF"].forEach((id) => {
     const element = document.getElementById(id);
-    if (element.classList.contains("lightYellow") {
-      localStorage.setItem(id, element.value);
+    if (element.classList.contains("lightYellow")) {
+      localStorage.setItem(id, "lightYellow");
     } else {
-      localStorage.removeItem(id);
+      localStorage.setItem(id, "transparent");
     }
     element.classList.remove("lightYellow", "transparent");
   });
-  
+
   ["workerName1", "workerName2", "workerName3", "workerName4", "workerName5", "workerName6"].forEach((id) => {
     const element = document.getElementById(id);
     if (element.classList.contains("blue")) {
@@ -71,7 +45,7 @@ function save() {
     } else {
       localStorage.removeItem(id);
     }
-    element.classList.remove("blue", "lightYellow", "transparent");
+    element.classList.remove("blue", "transparent");
   });
 
   const supervisor = document.getElementById("task-supervisor").value;
@@ -83,13 +57,13 @@ function save() {
   localStorage.setItem("task-name", taskName);
   localStorage.setItem("task-content", taskContent);
   localStorage.setItem("task-capacity", taskCapacity);
-  localStorage.setItem("selectedWorkers", JSON.stringify(selectedWorkers));
 
   document.getElementById("task-supervisor").value = "";
   document.getElementById("task-name").value = "";
   document.getElementById("task-content").value = "";
   document.getElementById("task-capacity").value = "";
   
-
   alert("状態と作業情報が保存され、初期化されました。");
 }
+
+document.getElementById("save").addEventListener("click", save);
