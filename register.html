@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>登録画面</title>
+    <link rel="stylesheet" href="register.css" />
+  </head>
+  <body>
+    <h1>入退場管理システム</h1>
+    <div class="container">
+      <div class="area">
+        <div class="area-up">
+          <button class="area-up-box" id="areaA">エリアA</button>
+          <button class="area-up-box" id="areaB">エリアB</button>
+          <button class="area-up-box" id="areaC">エリアC</button>
+        </div>
+        <div class="area-down">
+          <button class="area-down-box" id="areaD">エリアD</button>
+          <button class="area-down-box" id="areaE">エリアE</button>
+          <button class="area-down-box" id="areaF">エリアF</button>
+        </div>
+      </div>
+
+      <div class="work">
+        <div class="work-task">
+          <p>【作業指示者】</p>
+          <select id="task-supervisor">
+            <option value="">-- 名前を選択して下さい --</option>
+            <option value="Aさん">A</option>
+            <option value="Bさん">B</option>
+            <option value="Cさん">C</option>
+          </select>
+          <p>【作業名】</p>
+          <input type="text" id="task-name" placeholder="作業名を入力"/>
+          <p>【内容】</p>
+          <textarea id="task-content"  placeholder="作業内容を入力して下さい。"></textarea>
+          <p>【許可人数】</p>
+          <select id="task-capacity" aria-label="許可人数" required>
+            <option value=""></option>
+            <option value="1">1人</option>
+            <option value="2">2人</option>
+            <option value="3">3人</option>
+          </select>
+        </div>
+      </div>
+    </div>
+
+    <div class="worker">
+      <button class="worker-button" id="workerName1" value="一郎">一郎</button>
+      <button class="worker-button" id="workerName2" value="二郎">二郎</button>
+      <button class="worker-button" id="workerName3" value="三郎">三郎</button>
+      <button class="worker-button" id="workerName4" value="四郎">四郎</button>
+      <button class="worker-button" id="workerName5" value="五郎">五郎</button>
+      <button class="worker-button" id="workerName6" value="一子">一子</button>
+    </div>
+    <button id="save">登録</button>
+
+    <script src="register.js"></script>
+  </body>
+</html>

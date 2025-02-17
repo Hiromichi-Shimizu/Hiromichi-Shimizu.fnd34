@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>表示画面</title>
+    <link rel="stylesheet" href="display.css" />
+  </head>
+
+  <body>
+    <h1>入退場管理システム</h1>
+    <div class="container">
+      <div class="area">
+        <div class="area-up">
+          <button class="area-up-box" id="areaA">エリアA</button>
+          <button class="area-up-box" id="areaB">エリアB</button>
+          <button class="area-up-box" id="areaC">エリアC</button>
+        </div>
+        <div class="area-down">
+          <button class="area-down-box" id="areaD">エリアD</button>
+          <button class="area-down-box" id="areaE">エリアE</button>
+          <button class="area-down-box" id="areaF">エリアF</button>
+        </div>
+      </div>
+
+      <div class="work">
+        <div class="work-task">
+          <p>【作業指示者】</p>
+          <p id="task-supervisor"></p>
+          <p>【作業名】</p>
+          <p id="task-name"></p>
+          <p>【内容】</p>
+          <p id="task-content"></p>
+          <p>【許可人数】</p>
+          <p id="task-capacity"></p>
+        </div>
+      </div>
+
+      <div class="worker">
+        <div class="worker-name">
+          <div>氏名</div>
+          <div id="workerName1"></div>
+          <div id="workerName2"></div>
+          <div id="workerName3"></div>
+          <div id="workerName4"></div>
+          <div id="workerName5"></div>
+          <div id="workerName6"></div>
+        </div>
+        <div class="worker-status">
+          <div>状態</div>
+          <div id="workerStatus1"></div>
+          <div id="workerStatus2"></div>
+          <div id="workerStatus3"></div>
+          <div id="workerStatus4"></div>
+          <div id="workerStatus5"></div>
+          <div id="workerStatus6"></div>
+        </div>
+        <div class="worker-time">
+          <div>経過時間</div>
+          <div id="workerTime1"></div>
+          <div id="workerTime2"></div>
+          <div id="workerTime3"></div>
+          <div id="workerTime4"></div>
+          <div id="workerTime5"></div>
+          <div id="workerTime6"></div>
+        </div>
+      </div>
+    </div>
+
+    <button id="in">入場</button>
+    <button id="out">退場</button>
+
+    <div id="inName" style="display: none">
+      <label for="inputInName">氏名を入力してください:</label>
+      <input type="text" id="inputInName" name="name" />
+      <button id="inSend">送信</button>
+    </div>
+
+    <div id="outName" style="display: none">
+      <label for="inputOutName">氏名を入力してください:</label>
+      <input type="text" id="inputOutName" name="name" />
+      <button id="outSend">送信</button>
+    </div>
+
+    <script src="display.js"></script>
+
+  </body>
+</html>

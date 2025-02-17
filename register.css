@@ -1,0 +1,125 @@
+h1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.area {
+    width: 400px;
+    height: 300px;
+    font-size: small;
+    background-size: 70%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-image: url("https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjEvVRPO_mcKlAM3SrujBZHIMEtyySBd2BZVFQj6rEdJ3ATDnMLs6QCRzJo5gBMqoOW2x1Kyb5lSN3oG_Gno7DFG67qjGr5Rc5M1GFGM7YR1wsVvvh4AAxp70i1y2ZZhqpCA2mQn3DySs4/s800/4_chuubu8_aichi.png");
+}
+
+.area-up {
+    width: 400px;
+    height: 150px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    background: transparent;
+}
+
+.area-up-box {
+    border: 1px solid #000;
+    width: 100px;
+    height: 100px;
+    text-align: center;
+    line-height: 100px;
+    background: transparent;
+}
+
+.area-down {
+    width: 400px;
+    height: 150px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    background: transparent;
+}
+
+.area-down-box {
+    border: 1px solid #000;
+    width: 100px;
+    height: 100px;
+    text-align: center;
+    line-height: 100px;
+    background: transparent;
+}
+
+.work {
+    border: 1px solid #000;
+    width: 300px;
+    height: 300px;
+    display: flex;
+}
+
+.work-task {
+    font-size: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    flex-direction: column;
+    display: flex;
+}
+
+#task-supervisor {
+    font-size: 10px;
+    width: 260px;
+    height: 20px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#task-name {
+    font-size: 10px;
+    width: 260px;
+    height: 20px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#task-content {
+    font-size: 15px;
+    width: 260px;
+    height: 60px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#task-capacity {
+    font-size: 15px;
+    width: 260px;
+    height: 20px;
+    margin: 0px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.lightYellow {
+    background-color: rgba(255, 255, 0, 0.5);
+}
+
+.transparent {
+    background-color: transparent;
+}
+
+.lightRed {
+    background-color: rgba(255, 0, 0, 0.5);
+}
+
+.selected {
+    background-color: yellow;
+}
+
+.blue {
+    background-color: blue;
+}
